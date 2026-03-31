@@ -1,0 +1,6 @@
+[
+    {"username": "randomguy" , "password": "secret_sauce" , "type": "invalid"},
+    {"username": "standard_user", "password":"sercet_sauce", "type": "invalid"},
+    {"username": "standard_user", "password": "secret_sauce", "type": "valid"},
+    {"username": "randomguy", "password": "", "type": "invalid"}
+]
