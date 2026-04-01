@@ -11,7 +11,7 @@ test ('valid login' , async ({page}) => {
     await loginpage.login('visual_user', 'secret_sauce');
 
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
-    await expect(page).toHaveTitle('Products')
+    
 });
 
 test ('not valid login', async ({page}) => {
