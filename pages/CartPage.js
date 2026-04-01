@@ -1,20 +1,20 @@
 export class CartPage {
     constructor(page) {
         this.page = page;
-        this.CartItems = page.locator('.cart-item');
-        this.removeButton = page.locator('button:has-text("Remove")');
-        this.continueShop = page.locator('#continue-shopping');        
+        this.cartitem = page.locator('.cart_item');
+        this.removebutton = (productname)=> page.locator(`[data-test*="remove-${productname}"]`);
+        this.continuebutton = page.locator('#continue-shopping');
     }
 
     async getCartItemCount() {
-        return await this.CartItems.count();
+        return await this.cartitem.count();
     }
 
-    async removeItem() {
-        await this.removeButton.first().click();
+    async removeitem(productname) {
+        await this.removebutton(productname).first().click();
     }
 
-    async goBacktoProduct() {
-        await this.continueShop.click();
+    async goBackToProducts() {
+        await this.continuebutton.click();
     }
 }

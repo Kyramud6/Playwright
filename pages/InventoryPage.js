@@ -1,24 +1,28 @@
-export class InventoryPage {
-    constructor(page) {
+export class InventoryPage{
+    constructor(page){
         this.page = page;
-        this.inventoryItems = page.locator('.inventory_item');
-        this.AddtoCart = page.locator('.inventory_item').first();
-        this.CartBadge = page.locator('.shopping_cart_badge');
-        this.cartIcon = page.locator('.shopping_cart_link');
+        this.inventoryitem = page.locator('.inventory-item');
+        this.cartbadge = page.locator('.shopping_cart_badge');
+        this.carticon = page.locator('.shopping_cart_link');
     }
-    async getProduct() {
-        return await this.inventoryItems.count();
+
+    async getProductCount() {
+        return await this.inventoryitem.count();
     }
-    async addItemtoCart() {
-        await this.AddtoCart.click();
+
+    // Json Data and flexible button add to cart
+    async addToCart(productname) {
+        const button = this.page.locator(`[data-test*="add-to-cart-${productname}"]`);
+        await button.click();
     }
-    async getCartCount(){
-        if (await this.CartBadge.isVisible()){
-            return parseInt(await this.CartBadge.textContent());
+
+    async getCartCount() {
+        if (await this.cartbadge.isVisible()) {
+            return parseInt(await this.cartbadge.textContent());
         }
         return 0;
     }
-    async gotoCart() {
-        await this.cartIcon.click();
+    async goToCart() {
+        await this.carticon.click();
     }
 }

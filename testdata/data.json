@@ -1,6 +1,13 @@
-[
+{
+ "login" : [
     {"username": "randomguy" , "password": "secret_sauce" , "type": "invalid"},
     {"username": "standard_user", "password":"sercet_sauce", "type": "invalid"},
     {"username": "standard_user", "password": "secret_sauce", "type": "valid"},
     {"username": "randomguy", "password": "", "type": "invalid"}
-]
+    ],
+ "product" : [
+    {"productname" : "sauce-labs-backpack"},
+    {"productname" : "sauce-labs-bolt-t-shirt"},
+    {"productname" : "sauce-labs-onesie"}
+ ]
+}

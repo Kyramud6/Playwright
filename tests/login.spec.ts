@@ -2,7 +2,7 @@ import {test , expect} from '@playwright/test';
 import {LoginPage} from '../pages/LoginPage';
 import fs from 'fs';
 
-const invalidlogin = JSON.parse(fs.readFileSync('./testdata/invalidlogin.json', 'utf-8'));
+const data = JSON.parse(fs.readFileSync('./testdata/data.json', 'utf-8'));
 
 test ('valid login' , async ({page}) => {
     const loginpage = new LoginPage(page);
@@ -24,7 +24,7 @@ test ('not valid login', async ({page}) => {
 
 // run the test in group by using test.describe
 test.describe('Invalid login tests', () => {
-    for (const creds of invalidlogin) {
+    for (const creds of data.login) {
         test(`login with username: '${creds.username}' password: '${creds.password}'` , async ({page}) => {
             const loginpage = new LoginPage(page);
 
