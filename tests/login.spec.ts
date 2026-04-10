@@ -1,5 +1,5 @@
 import {test , expect} from '@playwright/test';
-import {LoginPage} from '../pages/LoginPage';
+import {LoginPage} from '../pages/LoginPage.js';
 import fs from 'fs';
 
 const data = JSON.parse(fs.readFileSync('./testdata/data.json', 'utf-8'));
