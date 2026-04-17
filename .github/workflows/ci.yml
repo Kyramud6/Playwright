@@ -1,8 +1,12 @@
+
+
 name: CI Pipeline
 on:
     push:
         branches: [main]
-
+permissions:
+  contents: write
+  
 jobs:
     test:
         runs-on: ubuntu-latest
