@@ -16,7 +16,7 @@ test.describe('Add to cart Flow', () => {
         await loginPage.goto();
         await loginPage.login('visual_user', 'secret_sauce');
 
-        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.l');
+        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
         const item = data.product[0];
 
