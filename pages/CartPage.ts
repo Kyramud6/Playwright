@@ -5,11 +5,13 @@ export class CartPage {
 
     cartItems;
     continueButton;
+    checkoutButton;
 
     constructor(page: Page) {
         this.page = page;
         this.cartItems = page.locator('.cart_item');
         this.continueButton = page.locator('#continue-shopping');
+        this.checkoutButton = page.locator('#checkout');
     }
 
     async getCartItemCount(): Promise<number> {
@@ -21,6 +23,10 @@ export class CartPage {
             `[data-test*="remove-${productName}"]`
         );
         await removeButton.first().click();
+    }
+
+    async goToCheckout() {
+        await this.checkoutButton.click();
     }
 
     async goBackToProducts() {

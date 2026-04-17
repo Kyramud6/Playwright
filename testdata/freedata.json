@@ -1,0 +1,40 @@
+{
+  "env": {
+    "baseUrl": "https://www.saucedemo.com"
+  },
+
+  "users": {
+    "valid": {
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    "locked": {
+      "username": "locked_out_user",
+      "password": "secret_sauce"
+    }
+  },
+
+  "products": {
+    "backpack": "sauce-labs-backpack",
+    "tshirt": "sauce-labs-bolt-t-shirt",
+    "onesie": "sauce-labs-onesie"
+  },
+
+  "scenarios": [
+    {
+      "name": "buy 1 product",
+      "user": "valid",
+      "items": ["backpack"]
+    },
+    {
+      "name": "buy 2 products",
+      "user": "valid",
+      "items": ["backpack", "tshirt"]
+    },
+    {
+      "name": "buy all products",
+      "user": "valid",
+      "items": ["backpack", "tshirt", "onesie"]
+    }
+  ]
+}
