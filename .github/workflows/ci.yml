@@ -30,9 +30,6 @@ jobs:
               with:
                     name: playwright-report
                     path: playwright-report/
-            
-            - name: Generating HTML Report
-              run: npx playwright show-report playwright-report --reporter=html
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
