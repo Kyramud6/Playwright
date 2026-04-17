@@ -28,7 +28,7 @@ test.describe('Full Flow Test', () => {
         await loginPage.goto();
         await loginPage.login(user.username, user.password);
 
-        await expect(page).toHaveURL('https://www.saucedemo.com/inventory');
+        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 
         const item = data.product[0];
 
